@@ -8,7 +8,7 @@ const destinationFolder = 'dist';
 
 gulp.task('build', ['build-js', 'build-html']);
 
-gulp.task('dev', function() {
+gulp.task('dev', ['build'], function() {
     gulp.watch(`${sourceFolder}/**/*`, ['build']);
 });
 
