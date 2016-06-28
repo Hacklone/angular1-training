@@ -1,5 +1,8 @@
 angular.module('RoboShop')
     .service('robotsService', class RobotsService {
+        $http;
+        $q;
+
         constructor($http, $q) {
             this.$http = $http;
             this.$q = $q;

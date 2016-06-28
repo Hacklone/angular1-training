@@ -1,3 +1,6 @@
 node_modules
 bower_packages
 .idea/workspace.xml
+
+dist
+typings
