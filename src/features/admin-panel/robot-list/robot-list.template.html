@@ -7,12 +7,10 @@
     </div>
 
     <table class="table table-striped">
-        <tr>
-            <th>Id</th>
-            <th></th>
-        </tr>
         <tr ng-repeat="robot in $ctrl.robots">
-            <td>{{ robot.id }}</td>
+            <td>
+                <robot-detail robot="robot"></robot-detail>
+            </td>
             <td>
                 <button class="btn btn-danger" ng-click="$ctrl.removeRobot(robot)">
                     <span class="fa fa-trash"></span>
