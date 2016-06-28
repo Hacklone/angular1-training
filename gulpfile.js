@@ -15,7 +15,10 @@ gulp.task('dev', ['build'], function() {
 gulp.task('build-js', function() {
     return gulp.src(`${sourceFolder}/**/*.js`)
         .pipe(ngAnnotate())
-        .pipe(babel())
+        .pipe(babel({
+            presets: ['es2015'],
+            plugins: ['transform-async-to-generator']
+        }))
         .pipe(concat('app.js'))
         .pipe(gulp.dest(destinationFolder));
 });
