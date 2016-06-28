@@ -1,1 +1,1 @@
-angular.module('RoboShop', []);
+angular.module('RoboShop', ['ngMockE2E']);

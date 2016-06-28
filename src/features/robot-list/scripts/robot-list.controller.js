@@ -1,5 +1,5 @@
 angular.module('RoboShop')
-    .controller('robotListController', function RobotListController() {
+    .controller('robotListController', function RobotListController(robotsService) {
         const self = this;
 
         angular.extend(self, {
@@ -11,11 +11,10 @@ angular.module('RoboShop')
 
         init();
         function init() {
-            for (let i = 0; i < 15; i++) {
-                self.robots.push({
-                    id: i
+            robotsService.getRobots()
+                .then(robots => {
+                    self.robots = robots;
                 });
-            }
         }
 
         function addNewRobot() {
