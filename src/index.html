@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RoboShop">
+<head>
+    <meta charset="UTF-8">
+    <title>Robot shop</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <script src="infrastructure/modules.js"></script>
+
+    <script src="features/robot-list/scripts/robot-list.controller.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Robots List</h1>
+
+    <div ng-controller="robotListController as $ctrl">
+        <div>
+            <button class="btn btn-primary" ng-click="$ctrl.addNewRobot()">
+                <span class="fa fa-plus"></span>
+                Add robot
+            </button>
+        </div>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+            </tr>
+            <tr ng-repeat="robot in $ctrl.robots">
+                <td>{{ robot.id }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
