@@ -16,29 +16,7 @@
 <div class="container">
     <h1>Robots List</h1>
 
-    <div ng-controller="robotListController as $ctrl">
-        <div>
-            <button class="btn btn-primary" ng-click="$ctrl.addNewRobot()">
-                <span class="fa fa-plus"></span>
-                Add robot
-            </button>
-        </div>
-
-        <table class="table table-striped">
-            <tr>
-                <th>Id</th>
-                <th></th>
-            </tr>
-            <tr ng-repeat="robot in $ctrl.robots">
-                <td>{{ robot.id }}</td>
-                <td>
-                    <button class="btn btn-danger" ng-click="$ctrl.removeRobot(robot)">
-                        <span class="fa fa-trash"></span>
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
+    <robot-list></robot-list>
 </div>
 </body>
 </html>
