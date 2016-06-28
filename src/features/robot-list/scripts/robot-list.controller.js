@@ -5,7 +5,8 @@ angular.module('RoboShop')
         angular.extend(self, {
             robots: [],
 
-            addNewRobot: addNewRobot
+            addNewRobot: addNewRobot,
+            removeRobot: removeRobot
         });
 
         init();
@@ -21,5 +22,9 @@ angular.module('RoboShop')
             self.robots.push({
                 id: self.robots.length
             });
+        }
+
+        function removeRobot(robot) {
+            self.robots.splice(self.robots.indexOf(robot), 1);
         }
     });
