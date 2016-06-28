@@ -1,14 +1,17 @@
 angular.module('RoboShop')
-    .service('robotsService', function RobotsService($http, $q) {
-        function getRobots() {
-            return $q((resolve, reject) => {
-                return $http.get('/robots')
+    .service('robotsService', class RobotsService {
+        constructor($http, $q) {
+            this.$http = $http;
+            this.$q = $q;
+        }
+
+        getRobots() {
+            const self = this;
+
+            return self.$q((resolve, reject) => {
+                return self.$http.get('/robots')
                     .success(resolve)
                     .error(reject);
             });
         }
-
-        return {
-            getRobots: getRobots
-        };
     });
