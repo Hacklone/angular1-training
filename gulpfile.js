@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const ngAnnotate = require('gulp-ng-annotate');
-const babel = require('gulp-babel');
 const flatten = require('gulp-flatten');
 
 const sourceFolder = 'src';
@@ -16,10 +15,6 @@ gulp.task('dev', ['build'], function() {
 gulp.task('build-js', function() {
     return gulp.src(`${sourceFolder}/**/*.js`)
         .pipe(ngAnnotate())
-        .pipe(babel({
-            presets: ['es2015'],
-            plugins: ['transform-async-to-generator']
-        }))
         .pipe(concat('app.js'))
         .pipe(gulp.dest(destinationFolder));
 });
