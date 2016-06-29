@@ -7,7 +7,10 @@ angular.module('RoboShop')
             .when('/add-robot', {
                 templateUrl: 'views/add-robot.view.html'
             })
+            .when('/browse-panel', {
+                templateUrl: 'views/browse-panel.view.html'
+            })
             .otherwise({
-                redirectTo: '/admin-panel'
+                redirectTo: '/browse-panel'
             });
     });
