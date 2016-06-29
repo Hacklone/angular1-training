@@ -6,7 +6,12 @@ const flatten = require('gulp-flatten');
 const sourceFolder = 'src';
 const destinationFolder = 'dist';
 
-gulp.task('build', ['build-js', 'build-index-html', 'build-templates']);
+gulp.task('build', [
+    'build-js',
+    'build-index-html',
+    'build-templates',
+    'build-views'
+]);
 
 gulp.task('dev', ['build'], function() {
     gulp.watch(`${sourceFolder}/**/*`, ['build']);
@@ -28,4 +33,10 @@ gulp.task('build-templates', function() {
     return gulp.src(`${sourceFolder}/**/*.template.html`)
         .pipe(flatten())
         .pipe(gulp.dest(`${destinationFolder}/templates`));
+});
+
+gulp.task('build-views', function() {
+    return gulp.src(`${sourceFolder}/**/*.view.html`)
+        .pipe(flatten())
+        .pipe(gulp.dest(`${destinationFolder}/views`));
 });
