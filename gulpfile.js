@@ -19,7 +19,10 @@ gulp.task('dev', ['build'], function() {
 });
 
 gulp.task('build-js', function() {
-    return gulp.src(`${sourceFolder}/**/*.js`)
+    return gulp.src([
+        `${sourceFolder}/**/*.js`,
+        `!${sourceFolder}/**/*.spec.js`
+    ])
         .pipe(ngAnnotate())
         .pipe(concat('app.js'))
         .pipe(gulp.dest(destinationFolder));

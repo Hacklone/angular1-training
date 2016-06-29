@@ -1,1 +1,3 @@
-angular.module('RoboShop', ['ngMockE2E', 'ngRoute', 'ngMessages']);
+angular.module('RoboShop', ['ngRoute', 'ngMessages']);
+
+angular.module('RoboShopApp', ['RoboShop', 'ngMockE2E']);

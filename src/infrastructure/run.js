@@ -1,4 +1,4 @@
-angular.module('RoboShop')
+angular.module('RoboShopApp')
     .run(function($httpBackend) {
         let robots = [];
 
