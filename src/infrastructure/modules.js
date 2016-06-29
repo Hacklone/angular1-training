@@ -1,1 +1,1 @@
-angular.module('RoboShop', ['ngMockE2E']);
+angular.module('RoboShop', ['ngMockE2E', 'ngRoute']);

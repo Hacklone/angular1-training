@@ -14,6 +14,6 @@ angular.module('RoboShop')
         $httpBackend.whenGET('/robots')
             .respond(robots);
 
-        $httpBackend.whenGET(/templates\/./)
+        $httpBackend.whenGET(/(templates|views)\/./)
             .passThrough();
     });
