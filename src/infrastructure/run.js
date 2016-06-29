@@ -6,7 +6,7 @@ angular.module('RoboShop')
             robots.push({
                 id: i,
                 name: Math.random().toString(16).substring(2),
-                imageUrl: `https://robohash.org/${i}?size=150x150`,
+                imageUrl: `https://robohash.org/${i}?size=150x150&bgset=any`,
                 price: Math.floor(Math.random() * 1000)
             });
         }

@@ -2,9 +2,10 @@ angular.module('RoboShop')
     .component('robotList', {
         templateUrl: 'templates/robot-list.template.html',
         controller: class RobotListController {
-            constructor(robotsService, $scope) {
+            constructor(robotsService, $scope, $location) {
                 this.robotsService = robotsService;
                 this.$scope = $scope;
+                this.$location = $location;
 
                 this.robots = [];
             }
@@ -31,9 +32,7 @@ angular.module('RoboShop')
             }
 
             addNewRobot() {
-                this.robots.push({
-                    id: this.robots.length
-                });
+                this.$location.path('/add-robot');
             }
 
             removeRobot(robot) {
