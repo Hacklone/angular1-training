@@ -8,7 +8,7 @@
 
     <table class="table table-striped">
         <tr ng-repeat="robot in $ctrl.robots">
-            <td>
+            <td double-hover="$ctrl.increasePrice(robot)">
                 <robot-detail robot="robot"></robot-detail>
             </td>
             <td>

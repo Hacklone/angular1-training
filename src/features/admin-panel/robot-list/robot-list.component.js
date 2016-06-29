@@ -1,32 +1,37 @@
 angular.module('RoboShop')
     .component('robotList', {
         templateUrl: 'templates/robot-list.template.html',
-        controller: function RobotListController(robotsService) {
-            const self = this;
+        controller: class RobotListController {
+            constructor(robotsService, $scope) {
+                this.robotsService = robotsService;
+                this.$scope = $scope;
 
-            angular.extend(self, {
-                robots: [],
+                this.robots = [];
+            }
 
-                addNewRobot: addNewRobot,
-                removeRobot: removeRobot
-            });
+            $onInit() {
+                const self = this;
 
-            init();
-            function init() {
-                robotsService.getRobots()
+                self.robotsService.getRobots()
                     .then(robots => {
                         self.robots = robots;
                     });
             }
 
-            function addNewRobot() {
-                self.robots.push({
-                    id: self.robots.length
+            increasePrice(robot) {
+                robot.price += 100;
+
+                this.$scope.$apply();
+            }
+
+            addNewRobot() {
+                this.robots.push({
+                    id: this.robots.length
                 });
             }
 
-            function removeRobot(robot) {
-                self.robots.splice(self.robots.indexOf(robot), 1);
+            removeRobot(robot) {
+                this.robots.splice(this.robots.indexOf(robot), 1);
             }
         }
     });
