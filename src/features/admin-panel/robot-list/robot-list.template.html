@@ -6,8 +6,13 @@
         </button>
     </div>
 
+    <input class="form-control"
+           ng-model="searchText"
+           ng-model-options="{ debounce: 100 }"
+           placeholder="Search Robots...">
+
     <table class="table table-striped">
-        <tr ng-repeat="robot in $ctrl.robots">
+        <tr ng-repeat="robot in $ctrl.robots | filterByName: searchText">
             <td double-hover="$ctrl.increasePrice(robot)">
                 <robot-detail robot="robot"></robot-detail>
             </td>
