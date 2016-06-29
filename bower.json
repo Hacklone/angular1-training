@@ -1,0 +1,10 @@
+{
+  "name": "robo-shop",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "angular-mocks": "^1.5.7",
+    "angular-messages": "^1.5.7"
+  }
+}

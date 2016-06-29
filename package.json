@@ -10,5 +10,8 @@
   },
   "dependencies": {
     "angular": "^1.5.7"
+  },
+  "scripts": {
+    "postinstall": "bower i"
   }
 }

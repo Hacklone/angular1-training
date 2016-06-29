@@ -1,5 +1,5 @@
 node_modules
-bower_packages
+bower_components
 .idea/workspace.xml
 
 dist

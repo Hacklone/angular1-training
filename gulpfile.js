@@ -10,7 +10,8 @@ gulp.task('build', [
     'build-js',
     'build-index-html',
     'build-templates',
-    'build-views'
+    'build-views',
+    'build-dependencies'
 ]);
 
 gulp.task('dev', ['build'], function() {
@@ -39,4 +40,15 @@ gulp.task('build-views', function() {
     return gulp.src(`${sourceFolder}/**/*.view.html`)
         .pipe(flatten())
         .pipe(gulp.dest(`${destinationFolder}/views`));
+});
+
+gulp.task('build-dependencies', function() {
+    return gulp.src([
+        'bower_components/angular/angular.min.js',
+        'bower_components/angular-messages/angular-messages.min.js',
+        'bower_components/angular-route/angular-route.min.js',
+        'bower_components/angular-mocks/angular-mocks.js'
+    ])
+        .pipe(flatten())
+        .pipe(gulp.dest(`${destinationFolder}/dependencies`));
 });
