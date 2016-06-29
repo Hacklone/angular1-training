@@ -24,6 +24,12 @@ angular.module('RoboShop')
                 this.$scope.$apply();
             }
 
+            showRobotDetails(robot) {
+                this.robotShownInDialog = robot;
+
+                this.isRobotDetailDialogOpened = true;
+            }
+
             addNewRobot() {
                 this.robots.push({
                     id: this.robots.length

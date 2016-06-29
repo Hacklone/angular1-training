@@ -12,10 +12,20 @@
                 <robot-detail robot="robot"></robot-detail>
             </td>
             <td>
+                <button class="btn btn-default"
+                        ng-click="$ctrl.showRobotDetails(robot)">
+                    <span class="fa fa-wrench"></span>
+                </button>
+            </td>
+            <td>
                 <button class="btn btn-danger" ng-click="$ctrl.removeRobot(robot)">
                     <span class="fa fa-trash"></span>
                 </button>
             </td>
         </tr>
     </table>
+
+    <dialog is-opened="$ctrl.isRobotDetailDialogOpened">
+        <robot-detail robot="$ctrl.robotShownInDialog"></robot-detail>
+    </dialog>
 </div>

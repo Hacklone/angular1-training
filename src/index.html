@@ -11,6 +11,51 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-mocks.js"></script>
 
     <script src="app.js"></script>
+
+    <style>
+        dialog {
+            display: block;
+        }
+
+        .dialog {
+            position: fixed;
+
+            height: 100%;
+            width: 100%;
+
+            top: 0;
+            left: 0;
+
+            text-align: center;
+        }
+
+        .dialog .dialog-dimmer {
+            position: absolute;
+
+            background-color: #000;
+            opacity: 0.3;
+
+            height: 100%;
+            width: 100%;
+        }
+
+        .dialog .dialog-inner {
+            position: relative;
+
+            display: inline-block;
+
+            text-align: left;
+
+            border-radius: 10px;
+            background-color: #fff;
+
+            padding: 15px;
+
+            margin: 0 auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
 </head>
 <body>
 <div class="container">
